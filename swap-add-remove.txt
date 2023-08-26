@@ -1,0 +1,65 @@
+Adding Swap Memory
+▬▬▬▬▬▬▬▬▬▬
+Step 1: Checking the Swap Information
+----------------------------------------------------------------
+sudo swapon --show
+
+Step 2: Checking the hard disk space
+------------------------------------------------------------
+
+free -h
+df -h
+
+Step 3: Creating a Swap File
+---------------------------------------------
+
+sudo fallocate -l 1G /swapfile
+
+ls -lh /swapfile
+
+Step 4: Permission setting
+------------------------------------------
+
+sudo chmod 600 /swapfile
+
+ls -lh /swapfile
+
+Step 5: Enable Swap File
+---------------------------------------
+
+sudo mkswap /swapfile
+
+sudo swapon /swapfile
+
+sudo swapon --show
+
+
+
+Remove Swap Memory
+▬▬▬▬▬▬▬▬▬▬
+Step 1: Checking the Swap Information
+---------------------------------------------------------------
+sudo swapon --show
+
+Step 2: Checking the hard disk space
+-----------------------------------------------------------
+
+free -h
+
+Step 3: Disable Swap
+----------------------------------
+
+sudo swapoff -a
+
+Step 4: Remove the Swap file
+------------------------------------------------
+
+sudo rm /swapfile
+
+Step 5: Check Swap is disabled
+---------------------------------------------------
+
+sudo swapon --show
+
+free -h
+https://www.youtube.com/watch?v=23o_pBrYDLA

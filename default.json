@@ -1,0 +1,28 @@
+{
+    "agent": {
+        "metrics_collection_interval": 60,
+        "run_as_user": "cwagent"
+},
+    "metrics": {
+        "append_dimensions": {
+            "InstanceId": "${aws:InstanceId}"
+        },
+        "metrics_collected": {
+            "mem": {
+                "measurement": [{
+                        "name": "mem_used_percent",
+                        "rename": "MemoryUtilization"
+                    },
+                    {
+                        "name": "mem_available",
+                        "rename": "MemoryAvailable"
+                    }
+                ],
+                "metrics_collection_interval": 60,
+                "resources": [
+                    "/"
+                ]
+            }
+        }
+    }
+}
